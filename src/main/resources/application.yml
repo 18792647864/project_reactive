@@ -1,0 +1,20 @@
+spring:
+  rabbitmq:
+    virtual-host: /ems
+    host: 47.96.96.91
+    username: ems
+    password: ems
+    listener:
+      direct:
+        retry:
+          enabled: false
+          max-attempts: 5
+          initial-interval: 10s
+          multiplier: 2
+
+  r2dbc:
+    url: r2dbc:postgres://47.96.96.91:5432/mspbots_dev
+    username: mspbots
+    password: 123456
+  redis:
+    host: 47.96.96.91
